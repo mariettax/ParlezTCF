@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCF Canada Writing Tutor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .shadow-lg {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .shadow-md {
+            box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.06);
+        }
+        .focus\:ring-2:focus {
+            outline: none;
+            border-radius: 0.25rem;
+            box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.5); /* blue-500 with 50% opacity */
+        }
+        .hover\:bg-blue-600:hover {
+            background-color: #2563eb; /* darker shade of blue-700 */
+        }
+        .hover\:bg-gray-100:hover {
+            background-color: #f7fafc; /* Lightest gray */
+        }
+
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-semibold text-blue-700 text-center mb-6">TCF Canada Writing Tutor</h1>
+
+        <div id="main-nav" class="bg-white shadow-md rounded-lg p-4 mb-6">
+            <ul class="flex space-x-4">
+                <li class="nav-item">
+                    <a href="#dashboard" class="nav-link text-blue-600 hover:text-blue-800 hover:bg-gray-100 rounded-md p-2 transition duration-300">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#practice" class="nav-link text-blue-600 hover:text-blue-800 hover:bg-gray-100 rounded-md p-2 transition duration-300">Practice Writing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#simulation" class="nav-link text-blue-600 hover:text-blue-800 hover:bg-gray-100 rounded-md p-2 transition duration-300">TCF Exam Simulation</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#vocabulary" class="nav-link text-blue-600 hover:text-blue-800 hover:bg-gray-100 rounded-md p-2 transition duration-300">Vocabulary Builder</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#grammar" class="nav-link text-blue-600 hover:text-blue-800 hover:bg-gray-100 rounded-md p-2 transition duration-300">Grammar Workshop</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#progress" class="nav-link text-blue-600 hover:text-blue-800 hover:bg-gray-100 rounded-md p-2 transition duration-300">Progress Reports</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#settings" class="nav-link text-blue-600 hover:text-blue-800 hover:bg-gray-100 rounded-md p-2 transition duration-300">Settings</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="dashboard" class="page-content bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Dashboard</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-blue-100 rounded-md p-4 shadow-md">
+                    <h3 class="text-lg font-semibold text-blue-700 mb-2">Overall Progress</h3>
+                    <p class="text-gray-600">Your current level: <span class="font-semibold text-green-600">B2</span></p>
+                    <div class="mt-2">
+                         <div class="bg-gray-200 rounded-full h-2.5 mb-2">
+                            <div class="bg-green-500 h-2.5 rounded-full" style="width: 65%"></div>
+                        </div>
+                        <p class="text-sm text-gray-500">65% Complete</p>
+                    </div>
+                </div>
+                <div class="bg-blue-100 rounded-md p-4 shadow-md">
+                    <h3 class="text-lg font-semibold text-blue-700 mb-2">Next Milestone</h3>
+                    <p class="text-gray-600">Reach C1 level in 30 days</p>
+                    <div class="mt-2">
+                        <div class="bg-gray-200 rounded-full h-2.5 mb-2">
+                            <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 40%"></div>
+                        </div>
+                         <p class="text-sm text-gray-500">40% to next level</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6">
+                <h4 class="text-lg font-semibold text-gray-800 mb-3">Recent Activity</h4>
+                <ul class="list-disc list-inside space-y-2">
+                    <li class="text-gray-600">Completed practice writing on "Environment" - Scored B2</li>
+                    <li class="text-gray-600">Practiced vocabulary on "Immigration"</li>
+                    <li class="text-gray-600">Reviewed grammar: Subjunctive tense</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="practice" class="page-content bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Practice Writing</h2>
+            <div id="prompt-selection" class="mb-4">
+                <label for="prompt-dropdown" class="block text-gray-700 text-sm font-bold mb-2">Select a Writing Prompt:</label>
+                <select id="prompt-dropdown" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="" disabled selected>Choose a prompt</option>
+                    <option value="prompt1">Prompt 1: The impact of technology on society</option>
+                    <option value="prompt2">Prompt 2: The importance of preserving cultural heritage</option>
+                    <option value="prompt3">Prompt 3: Discuss the challenges of climate change</option>
+                    <option value="prompt4">Prompt 4:  The role of education in promoting equality.</option>
+                    <option value="prompt5">Prompt 5:  Benefits and drawbacks of globalization.</option>
+                </select>
+                <p id="prompt-description" class="mt-2 text-gray-500 italic"></p>
+            </div>
+
+            <div id="pre-writing-guidance" class="mb-4 p-4 bg-gray-50 rounded-md border border-gray-200">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Pre-Writing Guidance</h3>
+                <div id="vocabulary-suggestions" class="mb-2">
+                    <strong class="text-gray-700">Vocabulary Suggestions:</strong> <span class="text-blue-600"></span>
+                </div>
+                <div id="grammar-tips" class="mb-2">
+                    <strong class="text-gray-700">Grammar Tips:</strong> <span class="text-blue-600"></span>
+                </div>
+                 <div id="formatting-tips" class="mb-2">
+                    <strong class="text-gray-700">Formatting Tips:</strong> <span class="text-blue-600"></span>
+                </div>
+            </div>
+
+            <div id="writing-area" class="mb-4">
+                <label for="writing-input" class="block text-gray-700 text-sm font-bold mb-2">Your Response:</label>
+                <textarea id="writing-input" placeholder="Start your response here..." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-48 rounded-md"></textarea>
+                <p id="word-count" class="text-right text-gray-500 text-sm mt-1"></p>
+            </div>
+
+            <button id="submit-writing" class="bg-blue-700 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit for Feedback</button>
+
+            <div id="feedback" class="mt-6 p-4 bg-green-50 rounded-md border border-green-200 hidden">
+                <h3 class="text-lg font-semibold text-green-700 mb-2">Feedback</h3>
+                <div id="feedback-content">
+                    <p><strong class="text-gray-700">Overall Assessment:</strong> <span id="overall-assessment" class="text-blue-600"></span></p>
+                    <p><strong class="text-gray-700">Grammar:</strong> <span id="grammar-feedback" class="text-blue-600"></span></p>
+                    <p><strong class="text-gray-700">Vocabulary:</strong> <span id="vocabulary-feedback" class="text-blue-600"></span></p>
+                    <p><strong class="text-gray-700">Organization:</strong> <span id="organization-feedback" class="text-blue-600"></span></p>
+                    <p><strong class="text-gray-700">CEFR Level:</strong> <span id="cefr-level" class="text-blue-600"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="simulation" class="page-content bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">TCF Exam Simulation</h2>
+            <p class="mb-4 text-gray-600">Simulate the real TCF Canada writing exam environment.  You will be presented with three writing prompts with time limits.</p>
+
+            <div id="simulation-prompts" class="space-y-4 mb-4">
+                <div class="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded" role="alert">
+                  <p class="font-bold">Instructions:</p>
+                  <ul class="list-disc list-inside">
+                    <li>You will have 60 minutes to complete three writing tasks.</li>
+                    <li>Task 1: 10 minutes, 60-120 words.</li>
+                    <li>Task 2: 15 minutes, 120-150 words.</li>
+                     <li>Task 3: 35 minutes, 120-180 words.</li>
+                    <li>A timer will be displayed for each task.</li>
+                    <li>Your responses will be automatically saved.</li>
+                  </ul>
+                </div>
+                <div id="sim-prompt-1" class="bg-gray-50 rounded-md p-4 border border-gray-200">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Task 1 (10 minutes):</h3>
+                    <p id="sim-prompt-1-text" class="text-gray-700">Write an email to your neighbor describing a problem you are having with a recent delivery.</p>
+                    <textarea id="sim-response-1" placeholder="Write your response here..." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-24 rounded-md"></textarea>
+                    <p id="sim-word-count-1" class="text-right text-gray-500 text-sm mt-1"></p>
+                </div>
+                <div id="sim-prompt-2" class="bg-gray-50 rounded-md p-4 border border-gray-200">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Task 2 (15 minutes):</h3>
+                    <p id="sim-prompt-2-text" class="text-gray-700">Write a letter to the editor of a local newspaper expressing your opinion on a proposed change to public transportation.</p>
+                    <textarea id="sim-response-2" placeholder="Write your response here..." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-24 rounded-md"></textarea>
+                     <p id="sim-word-count-2" class="text-right text-gray-500 text-sm mt-1"></p>
+                </div>
+                <div id="sim-prompt-3" class="bg-gray-50 rounded-md p-4 border border-gray-200">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Task 3 (35 minutes):</h3>
+                    <p id="sim-prompt-3-text" class="text-gray-700">Compare and contrast the advantages and disadvantages of two different approaches to reducing pollution, as presented in the two documents below.  Express your opinion on the issue.</p>
+                    <div class="flex space-x-4 mb-2">
+                        <div class="flex-1 bg-white rounded-md p-2 border border-gray-200">
+                            <h4 class="text-md font-semibold text-gray-700 mb-1">Document 1:</h4>
+                            <p class="text-gray-600 text-sm">"Increased investment in public transportation is crucial for reducing urban pollution..."</p>
+                        </div>
+                        <div class="flex-1 bg-white rounded-md p-2 border border-gray-200">
+                            <h4 class="text-md font-semibold text-gray-700 mb-1">Document 2:</h4>
+                            <p class="text-gray-600 text-sm">"Technological advancements in electric vehicles offer the most promising solution to pollution..."</p>
+                        </div>
+                    </div>
+                    <textarea id="sim-response-3" placeholder="Write your response here..." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-48 rounded-md"></textarea>
+                    <p id="sim-word-count-3" class="text-right text-gray-500 text-sm mt-1"></p>
+                </div>
+            </div>
+             <div id="simulation-timer" class="mb-4 text-center text-xl font-semibold text-red-600 border border-red-300 rounded-md p-2">Time Remaining: <span id="timer-display">60:00</span></div>
+            <button id="submit-simulation" class="bg-blue-700 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit Simulation</button>
+
+            <div id="simulation-feedback" class="mt-6 p-4 bg-green-50 rounded-md border border-green-200 hidden">
+                <h3 class="text-lg font-semibold text-green-700 mb-2">Simulation Feedback</h3>
+                <div id="simulation-feedback-content">
+                    <p><strong class="text-gray-700">Task 1 Assessment:</strong> <span id="sim-assessment-1" class="text-blue-600"></span></p>
+                    <p><strong class="text-gray-700">Task 2 Assessment:</strong> <span id="sim-assessment-2" class="text-blue-600"></span></p>
+                    <p><strong class="text-gray-700">Task 3 Assessment:</strong> <span id="sim-assessment-3" class="text-blue-600"></span></p>
+                    <p><strong class="text-gray-700">Overall CEFR Level:</strong> <span id="sim-cefr-level" class="text-blue-600"></span></p>
+                    <p><strong class="text-gray-700">Areas for Improvement:</strong> <span id="sim-areas-improvement" class="text-blue-600"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="vocabulary" class="page-content bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Vocabulary Builder</h2>
+            <div id="theme-selection-vocab" class="mb-4">
+                <label for="vocab-theme-dropdown" class="block text-gray-700 text-sm font-bold mb-2">Select a Vocabulary Theme:</label>
+                <select id="vocab-theme-dropdown" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="" disabled selected>Choose a theme</option>
+                    <option value="theme1">Theme 1: Environment</option>
+                    <option value="theme2">Theme 2: Immigration</option>
+                    <option value="theme3">Theme 3: Education</option>
+                     <option value="theme4">Theme 4: Technology</option>
+                      <option value="theme5">Theme 5: Culture</option>
+                </select>
+            </div>
+
+            <div id="vocabulary-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+                </div>
+
+            <div id="vocabulary-quiz" class="bg-blue-50 rounded-md p-4 border border-blue-200 hidden">
+                <h3 class="text-lg font-semibold text-blue-700 mb-2">Vocabulary Quiz</h3>
+                <div id="quiz-question" class="mb-2 text-gray-700 font-medium"></div>
+                <div id="quiz-options" class="space-y-2 mb-4">
+                    <button class="quiz-option bg-white border border-gray-300 rounded-md py-2 px-4 w-full text-left hover:bg-gray-100 focus:outline-none focus:shadow-outline"></button>
+                    <button class="quiz-option bg-white border border-gray-300 rounded-md py-2 px-4 w-full text-left hover:bg-gray-100 focus:outline-none focus:shadow-outline"></button>
+                    <button class="quiz-option bg-white border border-gray-300 rounded-md py-2 px-4 w-full text-left hover:bg-gray-100 focus:outline-none focus:shadow-outline"></button>
+                </div>
+                <div id="quiz-feedback" class="mt-2 font-semibold"></div>
+                <button id="next-question" class="mt-4 bg-blue-700 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hidden">Next Question</button>
+                <button id="restart-quiz" class="mt-4 bg-red-700 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hidden">Restart Quiz</button>
+            </div>
+        </div>
+
+        <div id="grammar" class="page-content bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Grammar Workshop</h2>
+             <div id="grammar-topic-selection" class="mb-4">
+                <label for="grammar-dropdown" class="block text-gray-700 text-sm font-bold mb-2">Select a Grammar Topic:</label>
+                <select id="grammar-dropdown" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="" disabled selected>Choose a topic</option>
+                    <option value="grammar1">Subjunctive Mood</option>
+                    <option value="grammar2">Conditional Tense</option>
+                    <option value="grammar3">Relative Clauses</option>
+                    <option value="grammar4">Past Tenses (Passé Composé vs. Imparfait)</option>
+                    <option value="grammar5">Pronouns (Direct/Indirect Object)</option>
+                </select>
+            </div>
+
+            <div id="grammar-explanation" class="mb-4 bg-gray-50 rounded-md p-4 border border-gray-200">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Grammar Explanation</h3>
+                <p id="grammar-text" class="text-gray-700"></p>
+            </div>
+
+            <div id="grammar-practice" class="mb-4">
+                <h3 class="text-lg font-semibold text-gray-800 mb-2">Practice Exercises</h3>
+                 <div id="grammar-exercise-question" class="mb-2 text-gray-700 font-medium"></div>
+                <div id="grammar-exercise-input" class="mb-4">
+                    <label for="grammar-input-field" class="block text-gray-700 text-sm font-bold mb-2">Your Answer:</label>
+                    <input type="text" id="grammar-input-field" placeholder="Enter your answer here..." class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                </div>
+                <div id="grammar-exercise-feedback" class="mt-2 font-semibold"></div>
+                <button id="check-grammar-answer" class="bg-blue-700 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Check Answer</button>
+                 <button id="next-grammar-question" class="mt-4 bg-blue-700 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hidden">Next Exercise</button>
+                  <button id="restart-grammar" class="mt-4 bg-red-700 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline hidden">Restart Grammar</button>
+            </div>
+        </div>
+
+        <div id="progress" class="page-content bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Progress Reports</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                <div class="bg-white rounded-md p-4 shadow-md">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-2">Writing Performance</h3>
+                    <canvas id="writing-chart" width="400" height="200"></canvas>
+                </div>
+                <div class="bg-white rounded-md p-4 shadow-md">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-2">Vocabulary Acquisition</h3>
+                    <canvas id="vocabulary-chart" width="400" height="200"></canvas>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold text-gray-700 mb-2">Overall Progress</h3>
+                 <div class="bg-gray-200 rounded-full h-2.5 mb-2">
+                    <div id="overall-progress-bar" class="bg-blue-500 h-2.5 rounded-full" style="width: 50%"></div>
+                </div>
+                <p id="overall-progress-text" class="text-sm text-gray-500">50% Complete</p>
+            </div>
+        </div>
+
+        <div id="settings" class="page-content bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Settings</h2>
+            <div class="mb-4">
+                <label for="language-preference" class="block text-gray-700 text-sm font-bold mb-2">Preferred Language:</label>
+                <select id="language-preference" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="english">English</option>
+                    <option value="french">Français</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="notification-frequency" class="block text-gray-700 text-sm font-bold mb-2">Notification Frequency:</label>
+                <select id="notification-frequency" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                    <option value="none">None</option>
+                </select>
+            </div>
+            <button id="save-settings" class="bg-blue-700 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Save Settings</button>
+            <div id="settings-message" class="mt-4 text-green-600 font-semibold hidden">Settings saved successfully.</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pageContents = document.querySelectorAll('.page-content');
+        const promptDropdown = document.getElementById('prompt-dropdown');
+        const promptDescription = document.getElementById('prompt-description');
+        const writingInput = document.getElementById('writing-input');
+        const submitWritingButton = document.getElementById('submit-writing');
+        const feedbackDiv = document.getElementById('feedback');
+        const overallAssessmentDisplay = document.getElementById('overall-assessment');
+        const grammarFeedbackDisplay = document.getElementById('grammar-feedback');
+        const vocabularyFeedbackDisplay = document.getElementById('vocabulary-feedback');
+        const organizationFeedbackDisplay = document.getElementById('organization-feedback');
+        const cefrLevelDisplay = document.getElementById('cefr-level');
+        const wordCountDisplay = document.getElementById('word-count');
+
+        const simPrompt1Text = document.getElementById('sim-prompt-1-text');
+        const simPrompt2Text = document.getElementById('sim-prompt-2-text');
+        const simPrompt3Text = document.getElementById('sim-prompt-3-text');
+        const simResponse1 = document.getElementById('sim-response-1');
+        const simResponse2 = document.getElementById('sim-response-2');
+        const simResponse3 = document.getElementById('sim-response-3');
+        const submitSimulationButton = document.getElementById('submit-simulation');
+        const simulationFeedbackDiv = document.getElementById('simulation-feedback');
+        const simAssessment1Display = document.getElementById('sim-assessment-1');
+        const simAssessment2Display = document.getElementById('sim-assessment-2');
+        const simAssessment3Display = document.getElementById('sim-assessment-3');
+        const simCefrLevelDisplay = document.getElementById('sim-cefr-level');
+        const simAreasImprovementDisplay = document.getElementById('sim-areas-improvement');
+        const simulationTimerDisplay = document.getElementById('timer-display');
+        const simulationPromptsDiv = document.getElementById('simulation-prompts');
+
+        const vocabThemeDropdown = document.getElementById('vocab-theme-dropdown');
+        const vocabularyList = document.getElementById('vocabulary-list');
+        const vocabularyQuizDiv = document.getElementById('vocabulary-quiz');
+        const quizQuestionDisplay = document.getElementById('quiz-question');
+        const quizOptionsDisplay = document.querySelectorAll('.quiz-option');
+        const quizFeedbackDisplay = document.getElementById('quiz-feedback');
+        const nextQuestionButton = document.getElementById('next-question');
+        const restartQuizButton = document.getElementById('restart-quiz');
+
+        const grammarDropdown = document.getElementById('grammar-dropdown');
+        const grammarExplanationDiv = document.getElementById('grammar-explanation');
+        const grammarTextDisplay = document.getElementById('grammar-text');
+        const grammarExerciseQuestionDisplay = document.getElementById('grammar-exercise-question');
+        const grammarInputField = document.getElementById('grammar-input-field');
+        const checkGrammarAnswerButton = document.getElementById('check-grammar-answer');
+        const grammarExerciseFeedbackDisplay = document.getElementById('grammar-exercise-feedback');
+        const nextGrammarQuestionButton = document.getElementById('next-grammar-question');
+        const restartGrammarButton = document.getElementById('restart-grammar');
+
+        const writingChartCtx = document.getElementById('writing-chart').getContext('2d');
+        const vocabularyChartCtx = document.getElementById('vocabulary-chart').getContext('2d');
+        const overallProgressBar = document.getElementById('overall-progress-bar');
+        const overallProgressText = document.getElementById('overall-progress-text');
+        const languagePreferenceDropdown = document.getElementById('language-preference');
+        const notificationFrequencyDropdown = document.getElementById('notification-frequency');
+        const saveSettingsButton = document.getElementById('save-settings');
+        const settingsMessage = document.getElementById('settings-message');
+
+        let writingChart;
+        let vocabularyChart;
+        let simulationTimerInterval;
+        let currentSimulationTask = 1;
+        let timeLeft = 60 * 60;
+        let quizQuestions = [];
+        let currentQuestionIndex = 0;
+        let correctAnswersCount = 0;
+        let grammarExercises = [];
+        let currentGrammarExerciseIndex = 0;
+        let correctGrammarAnswersCount = 0;
+        let userAnswers = [];
+        let simulationResponses = {
+            task1: "",
+            task2: "",
+            task3: ""
+        };
+
+        function showPage(pageId) {
+            pageContents.forEach(page => page.style.display = 'none');
+            document.getElementById(pageId).style.display = 'block';
+            navLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`[href="#${pageId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const targetId = event.target.getAttribute('href').substring(1);
+                showPage(targetId);
+            });
+        });
+
+        showPage('dashboard');
+
+        const writingPrompts = {
+            prompt1: {
+                title: "The impact of technology on society",
+                description: "Discuss the positive and negative effects of technology on our daily lives, considering aspects like communication, work, and leisure.",
+                vocabulary: ["technology", "society", "impact", "communication", "work", "leisure", "effects", "digital", "innovation", "progress"],
+                grammar: ["Present tense", "Past tense", "Conditional tense", "Subjunctive mood"],
+                formatting: ["Introduction", "Body paragraphs (arguments and examples)", "Conclusion"]
+            },
+            prompt2: {
+                title: "The importance of preserving cultural heritage",
+                description: "Explain why it is important to protect historical sites, traditions, and artistic expressions.  Discuss the benefits of cultural preservation for future generations.",
+                vocabulary: ["cultural heritage", "preservation", "historical sites", "traditions", "artistic expressions", "future generations", "identity", "values", "diversity", "legacy"],
+                grammar: ["Present tense", "Conditional tense", "Relative clauses", "Passive voice"],
+                formatting: ["Exposition", "Argumentation", "Examples", "Conclusion"]
+            },
+            prompt3: {
+                title: "Discuss the challenges of climate change",
+                description: "Analyze the causes and consequences of climate change.  Suggest solutions to mitigate its effects and promote sustainable practices.",
+                vocabulary: ["climate change", "challenges", "causes", "consequences", "solutions", "mitigate", "sustainable", "environment", "global warming", "carbon footprint"],
+                grammar: ["Present tense", "Future tense", "Subjunctive mood", "Imperative mood"],
+                formatting: ["Problem-solution essay", "Analysis", "Recommendations"]
+            },
+            prompt4: {
+                title: "The role of education in promoting equality.",
+                description: "Discuss how education can help to reduce social and economic disparities and create a more equitable society.",
+                vocabulary: ["education", "equality", "social disparities", "economic disparities", "equitable society", "access", "opportunity", "empowerment", "knowledge", "skills"],
+                grammar: ["Present tense",  "Conditional tense", "Relative clauses"],
+                formatting: ["Argumentative essay", "Examples", "Supporting evidence"]
+            },
+            prompt5: {
+                title: "Benefits and drawbacks of globalization.",
+                description: "Examine the advantages and disadvantages of increased interconnectedness between countries, considering economic, cultural, and social aspects.",
+                vocabulary: ["globalization", "benefits", "drawbacks", "interconnectedness", "economic", "cultural", "social", "trade", "exchange", "diversity"],
+                grammar: ["Present tense", "Present perfect tense", "Comparison"],
+                formatting: ["Compare and contrast essay", "Balanced argument"]
+            }
+        };
+
+        promptDropdown.addEventListener('change', (event) => {
+            const selectedPrompt = event.target.value;
+            if (selectedPrompt) {
+                const prompt = writingPrompts[selectedPrompt];
+                promptDescription.textContent = prompt.description;
+                const vocabularySuggestions = prompt.vocabulary.join(', ');
+                const grammarTips = prompt.grammar.join(', ');
+                const formattingTips = prompt.formatting.join(', ');
+                document.getElementById('vocabulary-suggestions').querySelector('span').textContent = vocabularySuggestions;
+                document.getElementById('grammar-tips').querySelector('span').textContent = grammarTips;
+                document.getElementById('formatting-tips').querySelector('span').textContent = formattingTips;
+            } else {
+                promptDescription.textContent = '';
+                document.getElementById('vocabulary-suggestions').querySelector('span').textContent = '';
+                 document.getElementById('grammar-tips').querySelector('span').textContent = '';
+                  document.getElementById('formatting-tips').querySelector('span').textContent = '';
+            }
+            writingInput.value = '';
+            feedbackDiv.classList.add('hidden');
+            wordCountDisplay.textContent = '';
+        });
+
+        writingInput.addEventListener('input', () => {
+            const text = writingInput.value;
+            const wordCount = text.split(/\s+/).filter(Boolean).length;
+            wordCountDisplay.textContent = `Word Count: ${wordCount}`;
+        });
+
+        submitWritingButton.addEventListener('click', () => {
+            const response = writingInput.value;
+            if (!response.trim()) {
+                alert('Please write your response before submitting.');
+                return;
+            }
+
+            const feedback = {
+                overall: "Good attempt, but needs improvement in clarity and conciseness.",
+                grammar: "Some errors in verb tense and sentence structure.  Check passé composé vs imparfait.",
+                vocabulary: "Good range, but ensure precise usage.  Consider more sophisticated synonyms.",
+                organization: "Structure is logical, but improve transitions between paragraphs.",
+                cefr: "B1"
+            };
+
+            overallAssessmentDisplay.textContent = feedback.overall;
+            grammarFeedbackDisplay.textContent = feedback.grammar;
+            vocabularyFeedbackDisplay.textContent = feedback.vocabulary;
+            organizationFeedbackDisplay.textContent = feedback.organization;
+            cefrLevelDisplay.textContent = feedback.cefr;
+            feedbackDiv.classList.remove('hidden');
+        });
+
+
+
+        vocabThemeDropdown.addEventListener('change', (event) => {
+            const selectedTheme = event.target.value;
+            vocabularyList.innerHTML = '';
+            vocabularyQuizDiv.classList.add('hidden');
+            nextQuestionButton.classList.add('hidden');
+            restartQuizButton.classList.add('hidden');
+            currentQuestionIndex = 0;
+            correctAnswersCount = 0;
+            quizFeedbackDisplay.textContent = '';
+
+
+            let themeWords = [];
+            switch (selectedTheme) {
+                case 'theme1':
+                    themeWords = [
+                        { word: "environment", definition: "the surroundings or conditions in which a person, animal, or plant lives or operates." },
+                        { word: "pollution", definition: "the presence in or introduction into the environment of a substance or thing that has harmful or poisonous effects." },
+                        { word: "sustainability", definition: "the ability to be maintained at a certain rate or level." },
+                        { word: "conservation", definition: "the action of conserving something, in particular the preservation of a building, monument, or species." },
+                        { word: "ecosystem", definition: "a biological community of interacting organisms and their physical environment." }
+                    ];
+                    break;
+                case 'theme2':
+                    themeWords = [
+                          { word: "immigration", definition: "the action of coming to live permanently in a foreign country." },
+                        { word: "refugee", definition: "a person who has been forced to leave their country in order to escape war, persecution, or natural disaster." },
+                        { word: "asylum", definition: "the protection granted by a nation to someone who has left their native country as a political refugee." },
+                        { word: "integration", definition: "the process of becoming fully integrated into a new society or organization." },
+                        { word: "diaspora", definition: "the dispersion of any people from their original homeland." }
+                    ];
+                    break;
+                case 'theme3':
+                    themeWords = [
+                        { word: "education", definition: "the process of receiving or giving systematic instruction, especially at a school or university." },
+                        { word: "literacy", definition: "the ability to read and write." },
+                        { word: "curriculum", definition: "the subjects comprising a course of study in a school or university." },
+                         { word: "pedagogy", definition: "the method and practice of teaching, especially as an academic subject or theoretical concept." },
+                        { word: "scholarship", definition: "academic study; learning of a high level." }
+                    ];
+                    break;
+                case 'theme4':
+                    themeWords = [
+                        { word: "technology", definition: "the application of scientific knowledge for practical purposes, especially in industry." },
+                        { word: "innovation", definition: "the introduction of something new; a new idea, method, or device." },
+                        { word: "digital", definition: "of, relating to, or using signals or information represented as a series of binary digits 0 and 1." },
+                        { word: "automation", definition: "the use of largely automatic equipment in a system of manufacturing or other production process." },
+                        { word: "artificial intelligence", definition: "the theory and development of computer systems able to perform tasks that normally require human intelligence." },
+                    ];
+                    break;
+                case 'theme5':
+                    themeWords = [
+                        { word: "culture", definition: "the arts and other manifestations of human intellectual achievement regarded collectively." },
+                        { word: "heritage", definition: "property that is or may be inherited; an inheritance." },
+                        { word: "tradition", definition: "a custom or belief passed down through the generations or performed repeatedly year after year." },
+                        { word: "diversity", definition: "the state of being diverse; variety." },
+                        { word: "identity", definition: "the fact of being who or what a person or thing is." },
+                    ];
+                    break;
+            }
+
+            themeWords.forEach(item => {
+                const wordDiv = document.createElement('div');
+                wordDiv.classList.add('bg-white', 'rounded-md', 'p-3', 'shadow-sm', 'border', 'border-gray-200');
+                wordDiv.innerHTML = `<h4 class="text-lg font-semibold text-blue-700 mb-1">${item.word}</h4>
+                                     <p class="text-gray-600 text-sm">${item.definition}</p>`;
+                vocabularyList.appendChild(wordDiv);
+            });
+
+            quizQuestions = generateQuizQuestions(themeWords);
+            if(quizQuestions.length > 0){
+                vocabularyQuizDiv.classList.remove('hidden');
+                loadQuizQuestion();
+            }
+
+        });
+
+       function generateQuizQuestions(words) {
+            const questions = [];
+            if (words && words.length >= 4) {
+                for (let i = 0; i < words.length; i++) {
+                    const correctWord = words[i];
+                    const otherWords = words.filter(w => w !== correctWord);
+                    const shuffledOptions = [correctWord, ...shuffleArray(otherWords).slice(0, 3)];
+                    shuffleArray(shuffledOptions);
+
+                    questions.push({
+                        question: `What is the meaning of "${correctWord.word}"?`,
+                        correctAnswer: correctWord.definition,
+                        options: shuffledOptions.map(opt => opt.definition)
+                    });
+                }
+            }
+            return questions;
+        }
+
+        function shuffleArray(array) {
+            let currentIndex = array.length, randomIndex;
+            while (currentIndex != 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+                [array[currentIndex], array[randomIndex]] = [
+                    array[randomIndex], array[currentIndex]];
+            }
+            return array;
+        }
+
+        function loadQuizQuestion() {
+            if (currentQuestionIndex < quizQuestions.length) {
+                const questionData = quizQuestions[currentQuestionIndex];
+                quizQuestionDisplay.textContent = questionData.question;
+                quizFeedbackDisplay.textContent = '';
+                nextQuestionButton.classList.add('hidden');
+
+                quizOptionsDisplay.forEach((option, index) => {
+                    option.textContent = questionData.options[index];
+                    option.classList.remove('bg-green-100', 'bg-red-100', 'border-green-300', 'border-red-300', 'font-semibold');
+                    option.disabled = false;
+                });
+            } else {
+                endQuiz();
+            }
+        }
+
+        quizOptionsDisplay.forEach(option => {
+            option.addEventListener('click', (event) => {
+                const selectedAnswer = event.target.textContent;
+                const correctAnswer = quizQuestions[currentQuestionIndex].correctAnswer;
+
+                quizOptionsDisplay.forEach(opt => opt.disabled = true);
+
+                if (selectedAnswer === correctAnswer) {
+                    event.target.classList.add('bg-green-100', 'border-green-300', 'font-semibold');
+                    quizFeedbackDisplay.textContent = 'Correct!';
+                    quizFeedbackDisplay.style.color = 'green';
+                    correctAnswersCount++;
+                } else {
+                    event.target.classList.add('bg-red-100', 'border-red-300', 'font-semibold');
+                    const correctOption = Array.from(quizOptionsDisplay).find(opt => opt.textContent === correctAnswer);
+                    if(correctOption){
+                         correctOption.classList.add('bg-green-100', 'border-green-300', 'font-semibold');
+                    }
+                    quizFeedbackDisplay.textContent = 'Incorrect!';
+                    quizFeedbackDisplay.style.color = 'red';
+                }
+
+                nextQuestionButton.classList.remove('hidden');
+            });
+        });
+
+        nextQuestionButton.addEventListener('click', () => {
+            currentQuestionIndex++;
+            loadQuizQuestion();
+        });
+
+        function endQuiz() {
+            quizQuestionDisplay.textContent = `Quiz completed! You scored ${correctAnswersCount} out of ${quizQuestions.length}.`;
+            quizOptionsDisplay.forEach(option => option.style.display = 'none');
+            nextQuestionButton.classList.add('hidden');
+            restartQuizButton.classList.remove('hidden');
+
+            const percentage = (correctAnswersCount / quizQuestions.length) * 100;
+            let message = '';
+            if (percentage >= 80) {
+                message = "Excellent!";
+            } else if (percentage >= 60) {
+                message = "Good job!";
+            } else {
+                message = "Keep practicing.";
+            }
+            quizFeedbackDisplay.textContent = message;
+            quizFeedbackDisplay.style.color = 'blue';
+        }
+
+        restartQuizButton.addEventListener('click', () => {
+            currentQuestionIndex = 0;
+            correctAnswersCount = 0;
+            quizFeedbackDisplay.textContent = '';
+            quizOptionsDisplay.forEach(option => {
+                option.style.display = 'block';
+                option.classList.remove('bg-green-100', 'bg-red-100', 'border-green-300', 'border-red-300', 'font-semibold');
+                option.disabled = false;
+            });
+            shuffleArray(quizQuestions);
+            loadQuizQuestion();
+            restartQuizButton.classList.add('hidden');
+        });
+
+
+
+        grammarDropdown.addEventListener('change', (event) => {
+            const selectedGrammarTopic = event.target.value;
+            grammarExplanationDiv.classList.remove('hidden');
+            grammarExerciseFeedbackDisplay.textContent = '';
+            nextGrammarQuestionButton.classList.add('hidden');
+            restartGrammarButton.classList.add('hidden');
+            currentGrammarExerciseIndex = 0;
+            correctGrammarAnswersCount = 0;
+            grammarInputField.value = '';
+
+            let explanationText = '';
+            grammarExercises = [];
+            switch (selectedGrammarTopic) {
+                case 'grammar1':
+                    explanationText = "<h3>Subjunctive Mood</h3><p>The subjunctive mood is used to express actions or states that are uncertain, hypothetical, desired, or emotionally charged. It is often found in dependent clauses introduced by 'que'.</p><h4>Formation:</h4><p>The subjunctive is usually formed from the third-person plural of the present tense, dropping the '-ent' ending and adding the following endings: -e, -es, -e, -ions, -iez, -ent.</p><h5>Example:</h5><ul><li>Present Tense (Indicative): Ils parlent (They speak)</li><li>Present Subjunctive: Que je parle (That I speak)</li></ul>";
+                    grammarExercises = [
+                        { question: "Complete the sentence: Il faut que nous ______ (finir) le projet.", correctAnswer: "finissions" },
+                        { question: "Choose the correct subjunctive form: Je doute qu'il ______ (venir) à la fête.", correctAnswer: "vienne" },
+                        { question: "Transform to subjunctive: Il est important que tu ______ (être) à l'heure.", correctAnswer: "sois" },
+                         { question: "Complete the sentence: Il est nécessaire qu'elle ______ (faire) ses devoirs.", correctAnswer: "fasse" },
+                        {  question: "Choose the correct subjunctive form: Je veux que vous ______ (aller) au cinéma.", correctAnswer: "alliez" },
+                    ];
+                    break;
+                case 'grammar2':
+                    explanationText = "<h3>Conditional Tense</h3><p>The conditional tense is used to express what would happen in a given situation.  It is often used with 'si' clauses.</p><h4>Formation:</h4><p>The conditional tense is formed by adding the imparfait endings to the infinitive of the verb.</p><h5>Example:</h5><ul><li>Infinitive: Parler (To speak)</li><li>Conditional: Je parlerais (I would speak)</li></ul>";
+                    grammarExercises = [
+                        { question: "Complete the sentence: Si j'avais le temps, je ______ (voyager) en France.", correctAnswer: "voyagerais" },
+                        { question: "Choose the correct conditional form: Elle ______ (acheter) une maison si elle gagnait à la loterie.", correctAnswer: "achèterait" },
+                        { question: "Transform to conditional: Nous ______ (aller) au concert s'il n'y avait pas de grève.", correctAnswer: "irions" },
+                        { question: "Complete the sentence: Si tu étudiais plus, tu ______ (réussir) à l'examen.", correctAnswer: "réussirais" },
+                        { question: "Choose the correct conditional form: Ils ______ (être) heureux s'ils vivaient à la campagne.", correctAnswer: "seraient" },
+                    ];
+                    break;
+                case 'grammar3':
+                    explanationText = "<h3>Relative Clauses</h3><p>Relative clauses provide additional information about a noun. They are introduced by relative pronouns such as 'qui', 'que', 'dont', and 'où'.</p><h4>Key Points:</h4><ul><li>'Qui' acts as the subject of the relative clause.</li><li>'Que' acts as the direct object.</li><li>'Dont' means 'of whom', 'of which', or 'whose'.</li><li>'Où' refers to a place or time.</li></ul><h5>Example:</h5><ul><li>Le livre qui est sur la table est intéressant. (The book that is on the table is interesting.)</li></ul>";
+                    grammarExercises = [
+                        { question: "Complete the sentence: C'est le film ______ j'ai vu hier.", correctAnswer: "que" },
+                        { question: "Choose the correct relative pronoun: L'homme ______ parle est mon professeur.", correctAnswer: "qui" },
+                        { question: "Complete the sentence: La maison ______ le jardin est grand est belle.", correctAnswer: "dont" },
+                        { question: "Complete the sentence: La ville ______ je suis né est très belle.", correctAnswer: "où" },
+                        { question: "Choose the correct relative pronoun: Ce sont les étudiants ______ les projets sont excellents.", correctAnswer: "dont" },
+                    ];
+                    break;
+                case 'grammar4':
+                    explanationText = "<h3>Past Tenses (Passé Composé vs. Imparfait)</h3><p>The passé composé is used for completed actions in the past, while the imparfait is used for ongoing or habitual actions, descriptions, and states in the past.</p><h4>Passé Composé:</h4><ul><li>Auxiliary verb (avoir or être) + past participle</li><li>Example: J'ai mangé (I ate)</li></ul><h4>Imparfait:</h4><ul><li>Formed from the nous form of the present tense, dropping the '-ons' ending and adding imparfait endings (-ais, -ais, -ait, -ions, -iez, -aient)</li> <li>Example: Je mangeais (I was eating)</li></ul>";
+                    grammarExercises = [
+                        { question: "Complete the sentence: Hier, je ______ (aller) au cinéma.", correctAnswer: "suis allé" },
+                        { question: "Choose the correct tense: Quand j'étais petit, je ______ (jouer) souvent au foot.", correctAnswer: "jouais" },
+                        { question: "Complete the sentence: Nous ______ (finir) le projet hier soir.", correctAnswer: "avons fini" },
+                        { question: "Choose the correct tense: Il ______ (faire) beau tous les jours pendant les vacances.", correctAnswer: "faisait" },
+                        { question: "Complete the sentence: Elle ______ (lire) un livre quand le téléphone a sonné.", correctAnswer: "lisait" },
+                    ];
+                    break;
+                case 'grammar5':
+                    explanationText = "<h3>Pronouns (Direct/Indirect Object)</h3><p>Direct object pronouns (me, te, le/la, nous, vous, les) replace the noun that receives the action of the verb directly. Indirect object pronouns (me, te, lui, nous, vous, leur) replace the noun to whom or for whom the action is done.</p><h4>Key Points:</h4><ul><li>Direct Object Pronouns:  Je le vois. (I see him.)</li><li>Indirect Object Pronouns: Je lui parle. (I speak to him.)</li></ul>";
+                    grammarExercises = [
+                        { question: "Replace with a pronoun: Je donne le livre à Marie.  Je ______ donne le livre.", correctAnswer: "lui" },
+                        { question: "Replace with a pronoun:  Tu regardes la télé. Tu ______ regardes.", correctAnswer: "la" },
+                        { question: "Replace with pronouns: Il a donné les fleurs à sa mère. Il ______ a ______ données.", correctAnswer: "les lui" },
+                        { question: "Replace with a pronoun: Nous écrivons une lettre à nos amis. Nous ______ écrivons une lettre.", correctAnswer: "leur" },
+                        { question: "Replace with a pronoun: Elle aime le chocolat. Elle ______ aime.", correctAnswer: "l'" },
+                    ];
+                    break;
+            }
+
+            grammarTextDisplay.innerHTML = explanationText;
+            loadGrammarExercise();
+        });
+
+        function loadGrammarExercise() {
+            if (currentGrammarExerciseIndex < grammarExercises.length) {
+                const exercise = grammarExercises[currentGrammarExerciseIndex];
+                grammarExerciseQuestionDisplay.textContent = exercise.question;
+                grammarExerciseFeedbackDisplay.textContent = '';
+                nextGrammarQuestionButton.classList.add('hidden');
+                grammarInputField.value = '';
+                checkGrammarAnswerButton.disabled = false;
+            } else {
+                endGrammarPractice();
+            }
+        }
+
+        checkGrammarAnswerButton.addEventListener('click', () => {
+            const userAnswer = grammarInputField.value.trim();
+            const correctAnswer = grammarExercises[currentGrammarExerciseIndex].correctAnswer;
+
+            if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+                grammarExerciseFeedbackDisplay.textContent = 'Correct!';
+                grammarExerciseFeedbackDisplay.style.color = 'green';
+                correctGrammarAnswersCount++;
+            } else {
+                grammarExerciseFeedbackDisplay.textContent = `Incorrect. The correct answer is "${correctAnswer}".`;
+                grammarExerciseFeedbackDisplay.style.color = 'red';
+            }
+
+            checkGrammarAnswerButton.disabled = true;
+            nextGrammarQuestionButton.classList.remove('hidden');
+        });
+
+        nextGrammarQuestionButton.addEventListener('click', () => {
+            currentGrammarExerciseIndex++;
+            loadGrammarExercise();
+        });
+
+        function endGrammarPractice() {
+            grammarExerciseQuestionDisplay.textContent = `Practice completed! You scored ${correctGrammarAnswersCount} out of ${grammarExercises.length}.`;
+            grammarInputField.style.display = 'none';
+            checkGrammarAnswerButton.style.display = 'none';
+            nextGrammarQuestionButton.classList.add('hidden');
+            restartGrammarButton.classList.remove('hidden');
+
+             const percentage = (correctGrammarAnswersCount / grammarExercises.length) * 100;
+            let message = '';
+            if (percentage >= 80) {
+                message = "Excellent!";
+            } else if (percentage >= 60) {
+                message = "Good job!";
+            } else {
+                message = "Keep practicing.";
+            }
+            grammarExerciseFeedbackDisplay.textContent = message;
+            grammarExerciseFeedbackDisplay.style.color = 'blue';
+        }
+
+        restartGrammarButton.addEventListener('click', () => {
+            currentGrammarExerciseIndex = 0;
+            correctGrammarAnswersCount = 0;
+            grammarExerciseFeedbackDisplay.textContent = '';
+            grammarInputField.style.display = 'block';
+            checkGrammarAnswerButton.style.display = 'block';
+            nextGrammarQuestionButton.classList.add('hidden');
+            restartGrammarButton.classList.add('hidden');
+            grammarInputField.value = '';
+            shuffleArray(grammarExercises);
+            loadGrammarExercise();
+        });
+
+
+
+        writingChart = new Chart(writingChartCtx, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5'],
+                datasets: [{
+                    label: 'Writing Score',
+                    data: [60, 65, 70, 75, 80],
+                    borderColor: '#3498db',
+                    backgroundColor: '#3498db',
+                    fill: false,
+                    pointRadius: 5,
+                    pointHoverRadius: 7
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+
+        vocabularyChart = new Chart(vocabularyChartCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Theme 1', 'Theme 2', 'Theme 3', 'Theme 4', 'Theme 5'],
+                datasets: [{
+                    label: 'Words Learned',
+                    data: [20, 35, 25, 40, 30],
+                    backgroundColor: ['#2ecc71', '#3498db', '#9b59b6', '#f1c40f', '#e74c3c'],
+                    borderColor: ['#2ecc71', '#3498db', '#9b59b6', '#f1c40f', '#e74c3c'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 50
+                    }
+                }
+            }
+        });
+
+        function updateOverallProgress(progress) {
+            overallProgressBar.style.width = `${progress}%`;
+            overallProgressText.textContent = `${progress}% Complete`;
+        }
+
+        function startSimulation() {
+            simulationPromptsDiv.querySelectorAll('.simulation-prompt').forEach(prompt => prompt.style.display = 'none');
+            currentSimulationTask = 1;
+            timeLeft = 60 * 60;
+            simulationTimerDisplay.textContent = formatTime(timeLeft);
+            simulationFeedbackDiv.classList.add('hidden');
+             simulationResponses = {
+                task1: "",
+                task2: "",
+                task3: ""
+            };
+
+            document.getElementById(`sim-prompt-${currentSimulationTask}`).style.display = 'block';
+            simulationTimerInterval = setInterval(updateTimer, 1000);
+            submitSimulationButton.disabled = false;
+            submitSimulationButton.textContent = "Submit Simulation";
+        }
+
+        function updateTimer() {
+            if (timeLeft > 0) {
+                timeLeft--;
+                simulationTimerDisplay.textContent = formatTime(timeLeft);
+            } else {
+                clearInterval(simulationTimerInterval);
+                simulationTimerDisplay.textContent = 'Time is up!';
+                submitSimulationButton.disabled = true;
+                submitSimulationButton.textContent = "Time's Up - Simulation Ended";
+                recordSimulationResponse();
+                endSimulation();
+            }
+        }
+
+        function formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+        }
+
+        function recordSimulationResponse() {
+            switch (currentSimulationTask) {
+                case 1:
+                    simulationResponses.task1 = simResponse1.value.trim();
+                    break;
+                case 2:
+                    simulationResponses.task2 = simResponse2.value.trim();
+                    break;
+                case 3:
+                    simulationResponses.task3 = simResponse3.value.trim();
+                    break;
+            }
+        }
+
+        function endSimulation() {
+           recordSimulationResponse();
+            clearInterval(simulationTimerInterval);
+
+            let overallCefrLevel = 'B2';
+            let areasForImprovement = [];
+
+            if (!simulationResponses.task1) {
+                areasForImprovement.push("Task 1: Incomplete response.");
+            }
+             if (!simulationResponses.task2) {
+                areasForImprovement.push("Task 2: Incomplete response.");
+            }
+             if (!simulationResponses.task3) {
+                areasForImprovement.push("Task 3: Incomplete response.");
+            }
+
+            const task1Feedback = "Good attempt, clear communication.";
+            const task2Feedback = "Well-organized arguments.";
+            const task3Feedback = "Good analysis, strong opinion expressed.";
+
+            simAssessment1Display.textContent = task1Feedback;
+            simAssessment2Display.textContent = task2Feedback;
+            simAssessment3Display.textContent = task3Feedback;
+            simCefrLevelDisplay.textContent = overallCefrLevel;
+            simAreasImprovementDisplay.textContent = areasForImprovement.length > 0 ? areasForImprovement.join(" ") : "No major areas for improvement.";
+            simulationFeedbackDiv.classList.remove('hidden');
+            submitSimulationButton.disabled = true;
+            submitSimulationButton.textContent = "Simulation Completed";
+        }
+
+
+
+        submitSimulationButton.addEventListener('click', () => {
+            if (currentSimulationTask < 3) {
+                recordSimulationResponse();
+                currentSimulationTask++;
+                document.getElementById(`sim-prompt-${currentSimulationTask}`).style.display = 'block';
+                timeLeft = 60 * (currentSimulationTask === 2 ? 15 : 35);
+                simulationTimerDisplay.textContent = formatTime(timeLeft);
+                clearInterval(simulationTimerInterval);
+                simulationTimerInterval = setInterval(updateTimer, 1000);
+            } else {
+                endSimulation();
+            }
+        });
+
+        document.getElementById('simulation').querySelector('button').addEventListener('click', () => {
+            startSimulation();
+        });
+
+        saveSettingsButton.addEventListener('click', () => {
+            const selectedLanguage = languagePreferenceDropdown.value;
+            const selectedFrequency = notificationFrequencyDropdown.value;
+            console.log(`Language: ${selectedLanguage}, Frequency: ${selectedFrequency}`);
+            settingsMessage.classList.remove('hidden');
+            setTimeout(() => {
+                settingsMessage.classList.add('hidden');
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
